@@ -1,3 +1,3 @@
 __author__ = 'Administrator'
 
-from user import JourneyUser
+from .user import JourneyUser

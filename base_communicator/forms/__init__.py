@@ -1,4 +1,4 @@
 __author__ = 'Hakan Uyumaz'
 
 
-from user import JourneyUserCreationForm
+from .user import JourneyUserCreationForm

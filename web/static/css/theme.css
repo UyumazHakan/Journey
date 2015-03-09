@@ -1,0 +1,116 @@
+html, body{
+	overflow:auto;
+	min-height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+{% load staticfiles %}
+
+body{
+	background-color: black;
+	background-image: url({% static 'img/backgrounds/manhattan.jpg' %});
+	background-size: 100%;
+}
+.top{
+	position: relative;
+	top: 0px;
+}
+.form{
+	margin: 0 auto;
+}
+.left{
+	float: left;
+	clear: none;
+}
+.right{
+	float: right;
+	clear: none;
+}
+.round{
+	border-radius: 50%;
+}
+.hidden{
+	display: none !important;
+}
+.button{
+	width:100px;
+	height:100px;
+	font-size:20px;
+	color:#fff;
+	line-height:100px;
+	text-align:center;
+	cursor: pointer;
+	background:rgba(0,0,0,.5);
+}
+.button:hover{
+	width:100px;
+	height:100px;
+	font-size:20px;
+	color:#fff;
+	line-height:100px;
+	text-align:center;
+	background-color: rgba(0,0,0,.9);
+}
+.center{
+	margin: 0 auto;
+	text-align: center;
+}
+.main{
+	margin: 0 auto;
+	width: 80%;
+	overflow: hidden;
+}
+
+/*Login Page*/
+
+#sign-in{
+	margin-top: 10px;
+}
+
+#sign-in-box-container{
+	display: block;
+	padding: 20px;
+	border-radius: 15px;
+	width: 30%;
+	margin-top: 10px;
+	background-color: rgba(0, 0, 0, .5);
+	text-align: center;
+}
+
+.sign-in-box{
+	width: 80%;
+	margin: 0 auto;
+}
+.sign-in-box input{
+	margin:0 auto;
+	margin-bottom: 5px;
+	text-align: center;
+	border-radius: 10px;
+}
+
+.login-box-container{
+	display: block;
+	padding: 20px;
+	border-radius: 15px;
+	width: 50%;
+	margin-top: 300px;
+	background-color: rgba(0, 0, 0, .5);
+}
+.login-box{
+	width: 80%;
+}
+.login-box input{
+	margin:0px;
+	margin-bottom: 5px;
+	text-align: center;
+	border-radius: 10px;
+}
+.one-input-line{
+	width: 100%;
+}
+.two-input-line{
+	display: inline-block;
+	float: left;
+	clear: none;
+	width: 50%;
+}
