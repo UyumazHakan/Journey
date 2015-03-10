@@ -8,7 +8,7 @@ html, body{
 
 body{
 	background-color: black;
-	background-image: url({% static 'img/backgrounds/manhattan.jpg' %});
+	background-image: url('../img/backgrounds/manhattan.jpg');
 	background-size: 100%;
 }
 .top{

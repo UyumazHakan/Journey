@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-from web.views import main_page_view
+from base_communicator.views import main_page_view
 from base_communicator.functions import register
 
 urlpatterns = patterns('',
