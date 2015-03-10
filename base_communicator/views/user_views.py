@@ -36,3 +36,8 @@ def login_view(request):
                 if user.is_active:
                     login(request, user)
         return redirect("main")
+
+def logout_view(request):
+    if request.user.is_authenticated():
+        logout(request)
+    return redirect("main")
