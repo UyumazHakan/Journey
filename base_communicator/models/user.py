@@ -12,12 +12,11 @@ from ..utils import generate_token
 
 
 class JourneyUserManager(BaseUserManager):
-    def create_user(self, username=None, name=None, surname=None, email=None, password=None):
-        if not (username and name and surname and password and email):
+    def create_user(self, name=None, surname=None, email=None, password=None):
+        if not (name and surname and password and email):
             raise ValueError('An user requires username, name, surname, email, password')
 
         user = self.model(
-            username=username,
             name=name.title(),
             surname=surname.title(),
             email=self.normalize_email(email),
@@ -30,9 +29,8 @@ class JourneyUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, username=None, name=None, surname=None, email=None, password=None):
+    def create_superuser(self, name=None, surname=None, email=None, password=None):
         user = self.create_user(
-            username=username,
             name=name,
             surname=surname,
             email=email,
@@ -48,7 +46,6 @@ class JourneyUserManager(BaseUserManager):
 
 
 class JourneyUser(AbstractBaseUser):
-    username = models.CharField('Username', max_length=50)
 
     name = models.CharField('Name', max_length=50)
     surname = models.CharField('Surname', max_length=50)
