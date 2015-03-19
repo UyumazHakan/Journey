@@ -1,7 +1,6 @@
 __author__ = 'Hakan Uyumaz'
 
 from django.contrib import admin
-from ..models import JourneyUser
 
 class JourneyUserAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -10,4 +9,3 @@ class JourneyUserAdmin(admin.ModelAdmin):
     ]
 
 
-admin.site.register(JourneyUser, JourneyUserAdmin)
