@@ -8,6 +8,7 @@ from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
+
 from ..utils import generate_token
 
 
@@ -65,7 +66,7 @@ class JourneyUser(AbstractBaseUser):
     is_admin = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'name', 'surname']
+    REQUIRED_FIELDS = ['name', 'surname']
 
     objects = JourneyUserManager()
 

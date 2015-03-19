@@ -3,9 +3,13 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <a href="/logout/">Log out</a>
+
 </head>
 <body>
-
+    <a href="{% url 'logout' %}">Log out</a>
+    {% for journey in journeys %}
+        <a href="{% url 'journey' journey_id=journey.id %}">{{ journey.title }}</a>
+    {% endfor %}
+    <a href="{% url 'new_journey' %}">+</a>
 </body>
 </html>

@@ -7,6 +7,6 @@ class Journey(models.Model):
     title = models.TextField(max_length=50, null=False, blank=False)
     cover_photo = models.ImageField(upload_to='web/static/journey_photos/%Y/%m/%d/%h/', null=True, blank=True)
     date = models.DateField(null=False, blank=False)
-    summary =  models.TextField(max_length=1000, null=True, blank=True)
+    summary = models.TextField(max_length=1000, null=True, blank=True)
     users = models.ManyToManyField(JourneyUser, related_name="users", null=True, blank=True)
     owner = models.ForeignKey(JourneyUser, related_name="owner")
