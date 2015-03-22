@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{{ journey.title }}
+{% for note in journey.note_set.all %}
+    <a href="#">{{ note.title }}</a>
+{% endfor %}
+<a href="{% url 'add_note' journey.id %}">+</a>
+
+</body>
+</html>

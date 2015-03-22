@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="{% url 'add_note' journey.id %}" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Title" name="title">
+    <textarea rows="4" cols="50" placeholder="Text" name="text"></textarea><br>
+    <input type="submit" value="Add" name="submit" class="center submit">
+</form>
+</body>
+</html>

@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^new_journey/$', new_journey_view, name='new_journey'),
     url(r'^create_journey/$', create_journey, name='create_journey'),
     url(r'^journey/(?P<journey_id>\w+)/$', journey_view, name='journey'),
+    url(r'^journey/(?P<journey_id>\w+)/note_add/$', add_note, name='add_note'),
     url(r'^login/$', login_view, name='login'),
     url(r'^logout/$', logout_view, name='logout')
 )

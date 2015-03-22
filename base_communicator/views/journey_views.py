@@ -31,10 +31,14 @@ def add_note(request, journey_id):
                 note = form.save(False)
                 note.journey = journey
                 note.save()
+            return redirect('journey', journey_id)
+        else:
+            return render(request, "note_add.html", {"journey": journey})
 
-def journey_view(request):
+def journey_view(request, journey_id):
     if request.user.is_authenticated():
-        return None
+        journey = get_object_or_404(Journey, pk= journey_id)
+        return render(request, "journey.html", {"journey" : journey})
 
 def new_journey_view(request):
     if request.user.is_authenticated():
