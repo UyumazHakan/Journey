@@ -12,7 +12,7 @@ from django.contrib.auth.models import (
 from ..utils import generate_token
 
 
-class JourneyUserManager(BaseUserManager):
+class Usermanager(BaseUserManager):
     def create_user(self, name=None, surname=None, email=None, password=None):
         if not (name and surname and password and email):
             raise ValueError('An user requires username, name, surname, email, password')
@@ -46,7 +46,7 @@ class JourneyUserManager(BaseUserManager):
 
 
 
-class JourneyUser(AbstractBaseUser):
+class User(AbstractBaseUser):
 
     name = models.CharField('Name', max_length=50)
     surname = models.CharField('Surname', max_length=50)
@@ -68,7 +68,7 @@ class JourneyUser(AbstractBaseUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name', 'surname']
 
-    objects = JourneyUserManager()
+    objects = Usermanager()
 
     class Meta:
         pass

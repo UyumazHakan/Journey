@@ -6,13 +6,13 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.http import HttpResponse
 
-from ..forms import JourneyUserCreationForm
+from ..forms import UserCreationForm
 
 RESPONSE_JSON = {}
 
 def register(request):
     if request.method == "POST":
-        form = JourneyUserCreationForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.errors:
             RESPONSE_JSON["status"] = 1
             RESPONSE_JSON["description"] = "Form Error Occurred"

@@ -5,22 +5,26 @@ import http.client
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from ..forms import JourneyUserCreationForm
+from ..forms import UserCreationForm
 
 from base_communicator.models import user
+
+from ..utils import generate_token, send_activation_mail
 
 def register_view(request):
     if request.user.is_authenticated():
         return redirect("homepage")
     else:
         if request.method == "POST":
-            form = JourneyUserCreationForm(request.POST)
+            form = UserCreationForm(request.POST)
             if form.errors:
                 print(form.errors)
                 return redirect('main')
 
             user = form.save()
             print(str(user) + " successfully registered")
+            send_activation_mail(user)
+            print(str(user) + "'s activation mail has sent")
 
         return redirect("main")
 

@@ -5,7 +5,7 @@ import http.client
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
-from base_communicator.models import JourneyUser, Journey
+from base_communicator.models import User, Journey
 
 def main_page_view(request):
     if request.user.is_authenticated():

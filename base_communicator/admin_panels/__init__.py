@@ -1,9 +1,9 @@
 __author__ = 'Hakan Uyumaz'
 
-from .user import JourneyUserAdmin
+from .user import UserAdmin
 from .journey import JourneyAdmin
-from ..models import Journey, JourneyUser
+from ..models import Journey, User
 from django.contrib import admin
 
 admin.site.register(Journey, JourneyAdmin)
-admin.site.register(JourneyUser, JourneyUserAdmin)
+admin.site.register(User, UserAdmin)

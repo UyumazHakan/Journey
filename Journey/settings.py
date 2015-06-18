@@ -36,13 +36,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'base_communicator'
+    'base_communicator',
+    "djrill"
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -53,7 +53,7 @@ ROOT_URLCONF = 'Journey.urls'
 
 WSGI_APPLICATION = 'Journey.wsgi.application'
 
-AUTH_USER_MODEL = 'base_communicator.JourneyUser'
+AUTH_USER_MODEL = 'base_communicator.User'
 
 
 # Database
@@ -88,3 +88,7 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'web/templates'),
 )
+
+MANDRILL_API_KEY = "MCm7klZCtI0Lid2qbo7jtw"
+EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
+DEFAULT_FROM_EMAIL = "hakanuyumaz@gmail.com"
