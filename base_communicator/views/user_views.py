@@ -5,9 +5,11 @@ import http.client
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.utils import timezone
+
 from ..forms import UserCreationForm
 
-from base_communicator.models import user
+from base_communicator.models import User
 
 from ..utils import generate_token, send_activation_mail
 
@@ -45,3 +47,23 @@ def logout_view(request):
     if request.user.is_authenticated():
         logout(request)
     return redirect("main")
+
+def activate_view(request,activation_key):
+    try:
+        user = User.objects.get(activation_key=activation_key)
+    except User.DoesNotExist:
+        return redirect("main")
+
+    if not user.is_active:
+        if user.activation_expire_date < timezone.now():
+            user.activation_key = generate_token()
+            user.save()
+            send_activation_mail(user)
+            return redirect("main")
+
+        user.is_active = True
+        user.save()
+
+        return redirect("main")
+    else:
+        return redirect("main")
