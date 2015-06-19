@@ -47,7 +47,7 @@ class Usermanager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-
+    public_id = models.CharField('User Public ID', max_length=50)
     name = models.CharField('Name', max_length=50)
     surname = models.CharField('Surname', max_length=50)
 
