@@ -1,0 +1,51 @@
+.search_container {
+    width: 100%;
+}
+
+.category_search {
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+
+.position_search {
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+
+.search_container form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.journey_container {
+    display: block;
+
+}
+
+.journey_row {
+    display: block;
+}
+
+.journey {
+    display: inline-block;
+    float: left;
+    background-color: #CCCCCC;
+}
+
+.journey .photo {
+
+}
+
+.journey .name {
+
+}
+
+.journey .position {
+
+}
+
+.journey .category {
+
+}
