@@ -9,6 +9,8 @@ from django.contrib.auth.models import (
 )
 
 from ..utils import generate_token
+from .work import Work
+from .education import Education
 
 
 class UserManager(BaseUserManager):
@@ -47,14 +49,13 @@ class User(AbstractBaseUser):
     public_id = models.CharField('User Public ID', max_length=50)
     name = models.CharField('Name', max_length=50)
     surname = models.CharField('Surname', max_length=50)
+    email = models.EmailField(verbose_name='Email', max_length=255, unique=True)
 
-    email = models.EmailField(
-        verbose_name='Email',
-        max_length=255,
-        unique=True
-    )
+    profile_photo = models.ImageField(upload_to='uploaded/user_photos/%Y/%m/%d/%h/', null=True, blank=True)
+    cover_photo = models.ImageField(upload_to='uploaded/cover_photos/%Y/%m/%d/%h/', null=True, blank=True)
 
-    photo = models.ImageField(upload_to='uploaded/user_photos/%Y/%m/%d/%h/', null=True, blank=True)
+    works = models.ManyToManyField(Work, related_name="works", null=True, blank=True)
+    educations = models.ManyToManyField(Education, related_name="educations", null=True, blank=True)
 
     activation_key = models.CharField(max_length=40, blank=True)
     activation_expire_date = models.DateTimeField()
