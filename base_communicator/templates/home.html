@@ -1,15 +1,125 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta id="view" name="viewport"
+          content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1"/>
+    <title>Sophist Journey</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/layout_large.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:501px) and (max-width:800px)"
+          href="{% static 'css/layout_medium.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:50px) and (max-width:500px)"
+          href="{% static 'css/layout_small.css' %}"/>
+    <script src="{% static 'js/trd/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!--[if it IE 9]>
+		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+		<![endif]-->
 </head>
 <body>
-<a href="{% url 'logout' %}">Log out</a>
-{% for journey in journeys %}
-    <a href="{% url 'journey' journey_id=journey.id %}">{{ journey.title }}</a>
-{% endfor %}
-<a href="{% url 'new_journey' %}">+</a>
+<div class="page">
+    <div class="main_nav">
+        <div class="site_logo">
+        </div>
+        <div class="nav_profile_icons_container">
+            <div class="profile_icon"></div>
+            <div class="love_icon"></div>
+            <div class="privacy_icon"></div>
+            <div class="logout_icon"></div>
+        </div>
+        <div class="nav_icons_container">
+            <div class="home_icon"></div>
+            <div class="explore_icon"></div>
+            <div class="message_icon"></div>
+            <div class="journey_icon"></div>
+        </div>
+
+    </div>
+    <div class="photo_header" style="background-image:url({{ user.cover_photo }})">
+    </div>
+    <div class="info_bar">
+        <div class="statistic_column">
+            <div class="statistic friend"><span class="vertical_middle">{{ user.friends|length }} Friends</span></div>
+            <div class="statistic follower"><span class="vertical_middle">{{ user.followers|length }} Followers</span>
+            </div>
+            <div class="statistic following"><span
+                    class="vertical_middle">{{ user.followings|length }} Followings</span></div>
+        </div>
+        <div class="navigation_column">
+            <div class="profile_nav profile selected"><span class="vertical_middle">Profile</span></div>
+            <div class="profile_nav journey"><span class="vertical_middle">Journeys</span></div>
+            <div class="profile_nav share"><span class="vertical_middle">Shares</span></div>
+        </div>
+        <div class="detailed_column">
+
+            <div class="detailed picture"><img src="{{ user.profile_photo }}"></div>
+            <div class="detailed name">{{ user.name }} {{ user.surname }}</div>
+
+
+        </div>
+        <header>
+        </header>
+    </div>
+    <div class="content_container">
+        <div class="essential_content_container">
+            <div class="life_time_container">
+                <div class="header">
+                    Life Time
+                </div>
+                {% if user.educations|length > 0 %}
+                    <div class="sub_container">
+                        <div class="header">
+                            <div class="icon">
+                            </div>
+
+                            <div class="text">
+                                Education
+                            </div>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                {% for education in user.educations %}
+                                    <li>{{ education.program }}, {{ education.university }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if user.works|length > 0 %}
+                    <div class="sub_container">
+                        <div class="header">
+                            <div class="icon">
+                            </div>
+                            <div class="text">
+                                Work
+                            </div>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                {% for work in user.works %}
+                                    <li>{{ work.title }}, {{ work.company }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="sum_of_me_container">
+                <div class="header">
+                    Sum of Me
+                </div>
+                <div class="sub_container">
+                    <div class="text">
+                        {{ user.summary }}
+                    </div>
+                    <div class="photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

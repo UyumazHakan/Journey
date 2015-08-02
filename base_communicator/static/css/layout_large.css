@@ -1,0 +1,208 @@
+html, body {
+}
+
+.page {
+
+}
+
+.main_nav {
+    width: 100%;
+    height: 50px;
+    margin-top: -100px;
+}
+
+.site_logo {
+    width: 20%;
+    height: 100%;
+
+}
+
+.nav_icons_container {
+    width: 30%;
+    height: 100%;
+    margin: 0 auto;
+
+}
+
+.nav_icons_container .home_icon {
+
+}
+
+.nav_icons_container .explore_icon {
+
+}
+
+.nav_icons_container .message_icon {
+
+}
+
+.nav_icons_container .journey_icon {
+
+}
+
+.nav_profile_icons_container {
+    width: 30%;
+    height: 100%;
+
+}
+
+.nav_profile_icons_container .profile_icon {
+
+}
+
+.nav_profile_icons_container .love_icon {
+
+}
+
+.nav_profile_icons_container .privacy_icon {
+
+}
+
+.nav_profile_icons_container .logout_icon {
+
+}
+
+.photo_header {
+    height: 400px;
+    position: static;
+
+}
+
+.info_bar {
+    height: 100px;
+    display: block;
+    margin-top: -100px;
+
+}
+
+.info_bar .statistic_column {
+    width: 35%;
+    display: inline;
+    float: left;
+    height: 100%;
+}
+
+.info_bar .navigation_column {
+    width: 40%;
+    display: inline;
+    float: right;
+    overflow: hidden;
+}
+
+.info_bar .detailed_column {
+    width: 25%;
+    display: inline;
+    float: left;
+    padding-top: 10px;
+}
+
+.info_bar .statistic_column .statistic {
+    float: left;
+    width: 33%;
+    text-align: center;
+    overflow: hidden;
+    height: 100%;
+    display: table;
+}
+
+.info_bar .statistic_column .statistic:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.info_bar .navigation_column .profile_nav {
+    float: left;
+    text-align: center;
+    display: table;
+    width: 33%;
+}
+
+.info_bar .navigation_column .profile_nav:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.info_bar .detailed_column .detailed {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.info_bar .detailed_column .detailed.picture {
+    display: block;
+}
+
+.detailed.picture > img {
+    width: 100%;
+    max-width: 170px;
+}
+
+.content_container {
+    width: 80%;
+    overflow: hidden;
+    margin: 100px auto 0;
+
+}
+
+.essential_content_container {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.essential_content_container .life_time_container {
+    width: 40%;
+    float: left;
+}
+
+.essential_content_container .sum_of_me_container {
+    width: 40%;
+    float: right;
+
+}
+
+.essential_content_container .life_time_container > .header {
+
+}
+
+.essential_content_container .life_time_container .sub_container .header .icon {
+
+}
+
+.essential_content_container .life_time_container .sub_container .header .text {
+    font-size: 18px;
+    text-align: center;
+}
+
+.essential_content_container .life_time_container .sub_container .content {
+
+}
+
+.essential_content_container .life_time_container .sub_container .content ul {
+
+}
+
+.essential_content_container .life_time_container .sub_container .content ul li {
+
+}
+
+.essential_content_container .life_time_container .header {
+
+}
+
+.essential_content_container .sum_of_me_container .sub_container {
+
+}
+
+.essential_content_container .sum_of_me_container .sub_container .text {
+
+}
+
+.essential_content_container .sum_of_me_container .sub_container .photo {
+
+}
+
+.main_nav_gap {
+    width: 100%;
+    height: 50px;
+}

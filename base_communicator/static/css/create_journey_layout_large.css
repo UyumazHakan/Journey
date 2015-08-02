@@ -1,0 +1,19 @@
+.create_journey_nav {
+    width: 30%;
+
+}
+
+.create_journey_nav > .element {
+    width: 100%;
+}
+
+#content_window {
+    width: 70%;
+
+}
+
+#upload {
+    width: 99%;
+    height: 300px;
+    border: rgba(200, 200, 200, 0.8) dashed 2px;
+}
