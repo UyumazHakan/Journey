@@ -1,6 +1,5 @@
 __author__ = 'Hakan Uyumaz'
 
-import random
 import datetime
 
 import pytz
@@ -12,7 +11,7 @@ from django.contrib.auth.models import (
 from ..utils import generate_token
 
 
-class Usermanager(BaseUserManager):
+class UserManager(BaseUserManager):
     def create_user(self, name=None, surname=None, email=None, password=None):
         if not (name and surname and password and email):
             raise ValueError('An user requires username, name, surname, email, password')
@@ -44,8 +43,6 @@ class Usermanager(BaseUserManager):
         return user
 
 
-
-
 class User(AbstractBaseUser):
     public_id = models.CharField('User Public ID', max_length=50)
     name = models.CharField('Name', max_length=50)
@@ -68,7 +65,7 @@ class User(AbstractBaseUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name', 'surname']
 
-    objects = Usermanager()
+    objects = UserManager()
 
     class Meta:
         pass
@@ -76,7 +73,7 @@ class User(AbstractBaseUser):
     def is_staff(self):
         return self.is_admin
 
-    def has_perm(self, perm, obj=None):
+    def has_perm(self, perm):
         return True
 
     def has_module_perms(self, app_label):

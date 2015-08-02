@@ -1,37 +1,38 @@
 <html>
 <head>
-    {%load staticfiles %}
-	<link type="text/css" rel="stylesheet" charset="UTF-8" href="{% static 'css/theme.css' %}">
+    {% load staticfiles %}
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="{% static 'css/theme.css' %}">
 </head>
 <body>
-	<div class="main">
-		<div class="right hidden" id="sign-in-box-container">
-			<div class="sign-in-box">
-				<form class="form sign-in-form" action="/login/" method="post">
-                    {% csrf_token %}
-					<input type="email" placeholder="Email" name="email" class="two-input-line">
-					<input type="password" placeholder="Password" name="password" class="two-input-line"><br>
-					<input type="submit" value="Sign In" name="submit" class="center submit">
-				</form>
-			</div>
-		</div>
-		<div class="right round button top" id="sign-in">
-			Sign In
-		</div>
-		<div class="login-box-container center">
-			<div class="login-box center">
-				<form class="form login-form" action="/register/" method="post">
-                    {% csrf_token %}
-					<input type="text" placeholder="Name" name="name" class="two-input-line">
-					<input type="text" placeholder="Surname" name="surname" class="two-input-line"><br>
-					<input type="email" placeholder="Email" name="email" class="one-input-line"><br>
-					<input type="password" placeholder="Password" name="password" class="two-input-line">
-					<input type="password" placeholder="Re-enter Password" name="validation_password" class="two-input-line"><br>
-					<input type="submit" value="Sign Up" name="submit" class="center submit">
-				</form>
-			</div>
-		</div>
-	</div>
+<div class="main">
+    <div class="right hidden" id="sign-in-box-container">
+        <div class="sign-in-box">
+            <form class="form sign-in-form" action="/login/" method="post">
+                {% csrf_token %}
+                <input type="email" placeholder="Email" name="email" class="two-input-line">
+                <input type="password" placeholder="Password" name="password" class="two-input-line"><br>
+                <input type="submit" value="Sign In" name="submit" class="center submit">
+            </form>
+        </div>
+    </div>
+    <div class="right round button top" id="sign-in">
+        Sign In
+    </div>
+    <div class="login-box-container center">
+        <div class="login-box center">
+            <form class="form login-form" action="/register/" method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="Name" name="name" class="two-input-line">
+                <input type="text" placeholder="Surname" name="surname" class="two-input-line"><br>
+                <input type="email" placeholder="Email" name="email" class="one-input-line"><br>
+                <input type="password" placeholder="Password" name="password" class="two-input-line">
+                <input type="password" placeholder="Re-enter Password" name="validation_password"
+                       class="two-input-line"><br>
+                <input type="submit" value="Sign Up" name="submit" class="center submit">
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 <script type="text/javascript" src="{% static 'js/trd/jquery-2.1.1.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/script.js' %}"></script>

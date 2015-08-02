@@ -1,0 +1,29 @@
+.communication_container {
+    width: 100%;
+}
+
+.messages_container {
+    width: 60%;
+    float: left;
+}
+
+.contacts_container {
+    width: 40%;
+    float: left;
+}
+
+.contact {
+
+}
+
+.contact .photo {
+
+}
+
+.contact .name {
+
+}
+
+.contact .date {
+
+}

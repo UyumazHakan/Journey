@@ -1,15 +1,17 @@
-.create_journey_nav{
-	float: left;
-	margin-top: 20px;
+.create_journey_nav {
+    float: left;
+    margin-top: 20px;
 }
-.create_journey_nav > .element{
-	border: rgb(10,200,0) 4px solid;
-	border-radius: 5px;
-	box-sizing: border-box;
-	margin-top: 20px;
-	text-align: center;
+
+.create_journey_nav > .element {
+    border: rgb(10, 200, 0) 4px solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    text-align: center;
 }
-#content_window{
-	float: right;
-	margin-top: 20px;
+
+#content_window {
+    float: right;
+    margin-top: 20px;
 }

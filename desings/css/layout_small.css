@@ -1,109 +1,140 @@
-html, body{
+html, body {
 }
-.page{
-}
-.main_nav{
-}
-.site_logo{
 
+.page {
 }
-.nav_icons_container{
 
+.main_nav {
 }
-.nav_icons_container .home_icon{
 
-}
-.nav_icons_container .explore_icon{
-
-}
-.nav_icons_container .message_icon{
-
-}
-.nav_icons_container .journey_icon{
-
-}
-.nav_profile_icons_container{
-
-}
-.nav_profile_icons_container .profile_icon{
-	
-}
-.nav_profile_icons_container .love_icon{
-	
-}
-.nav_profile_icons_container .privacy_icon{
-	
-}
-.nav_profile_icons_container .logout_icon{
-	
-}
-.photo_header{
-
-}
-.info_bar{
-
-}
-.info_bar .statistic_column{
+.site_logo {
 
 }
 
-.info_bar .navigation_column{ 
+.nav_icons_container {
 
 }
 
-.info_bar .detailed_column{
-
-}
-.info_bar .statistic_column .statistic{
+.nav_icons_container .home_icon {
 
 }
 
-.info_bar .navigation_column .profile_nav{ 
+.nav_icons_container .explore_icon {
 
 }
 
-.info_bar .detailed_column .detailed{
+.nav_icons_container .message_icon {
 
 }
-.content_container{
+
+.nav_icons_container .journey_icon {
 
 }
-.essential_content_container{
+
+.nav_profile_icons_container {
 
 }
-.essential_content_container .life_time_container{
+
+.nav_profile_icons_container .profile_icon {
 
 }
-.essential_content_container .sum_of_me_container{
+
+.nav_profile_icons_container .love_icon {
 
 }
-.essential_content_container .life_time_container .header{
+
+.nav_profile_icons_container .privacy_icon {
 
 }
-.essential_content_container .life_time_container .sub_container .header .icon{
+
+.nav_profile_icons_container .logout_icon {
 
 }
-.essential_content_container .life_time_container .sub_container .header .text{
+
+.photo_header {
 
 }
-.essential_content_container .life_time_container .sub_container .content{
+
+.info_bar {
 
 }
-.essential_content_container .life_time_container .sub_container .content ul{
+
+.info_bar .statistic_column {
 
 }
-.essential_content_container .life_time_container .sub_container .content ul li{
+
+.info_bar .navigation_column {
 
 }
-.essential_content_container .life_time_container .header{
+
+.info_bar .detailed_column {
 
 }
-.essential_content_container .sum_of_me_container .sub_container{
+
+.info_bar .statistic_column .statistic {
 
 }
-.essential_content_container .sum_of_me_container .sub_container .text{
+
+.info_bar .navigation_column .profile_nav {
 
 }
-.essential_content_container .sum_of_me_container .sub_container .photo{
+
+.info_bar .detailed_column .detailed {
+
+}
+
+.content_container {
+
+}
+
+.essential_content_container {
+
+}
+
+.essential_content_container .life_time_container {
+
+}
+
+.essential_content_container .sum_of_me_container {
+
+}
+
+.essential_content_container .life_time_container .header {
+
+}
+
+.essential_content_container .life_time_container .sub_container .header .icon {
+
+}
+
+.essential_content_container .life_time_container .sub_container .header .text {
+
+}
+
+.essential_content_container .life_time_container .sub_container .content {
+
+}
+
+.essential_content_container .life_time_container .sub_container .content ul {
+
+}
+
+.essential_content_container .life_time_container .sub_container .content ul li {
+
+}
+
+.essential_content_container .life_time_container .header {
+
+}
+
+.essential_content_container .sum_of_me_container .sub_container {
+
+}
+
+.essential_content_container .sum_of_me_container .sub_container .text {
+
+}
+
+.essential_content_container .sum_of_me_container .sub_container .photo {
 
 }

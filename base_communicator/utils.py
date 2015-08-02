@@ -1,11 +1,14 @@
 __author__ = 'Hakan Uyumaz'
 
 import random
+
 from django.core.mail import EmailMessage
+
 
 def generate_token():
     activation_key = str(random.random()).encode('utf8')
     return activation_key
+
 
 def send_activation_mail(user):
     subject = "Activate your Sophist Journey Account"
@@ -18,10 +21,8 @@ Sophist Journey
             """.format(user.name, user.surname, user.activation_key)
 
     mail = EmailMessage(subject, body, "Sophist Journey <hakanuyumaz@gmail.com>", to=[user.email])
-    print(mail)
     mail.send(fail_silently=False)
     response = mail.mandrill_response[0]
-    mandrill_id = response['_id']
 
 
 def send_activation_successful_mail(user):

@@ -1,169 +1,203 @@
-html, body{
-	width: 100%;
-	margin: 0 auto;
-	font-family: Helvetica;
-	font-size: 17px;
-	background-color: rgb(230,230,230);
-}
-.page{
-	width: 100%;
-	margin: 0 auto;
-}
-.main_nav{
-	width: 100%;
-	margin: 0 auto;
-	position: fixed;
-	background-color: rgba(150,150,150,0.6);
-}
-.site_logo{
-	float: left;
-	background-color: #DDD;
-}
-.nav_icons_container{
-	background-color: #DDD;
-
-}
-.nav_icons_container .home_icon{
-
-}
-.nav_icons_container .explore_icon{
-
-}
-.nav_icons_container .message_icon{
-
-}
-.nav_icons_container .journey_icon{
-
-}
-.nav_profile_icons_container{
-	background-color: #DDD;
-	float: right;
-}
-.nav_profile_icons_container .profile_icon{
-	
-}
-.nav_profile_icons_container .love_icon{
-	
-}
-.nav_profile_icons_container .privacy_icon{
-	
-}
-.nav_profile_icons_container .logout_icon{
-	
-}
-.photo_header{
-	width: 100%;
-	background-color: red;
-}
-.info_bar{
-	width: 100%;
-	background-color: rgba(255,255,255,0.5);
-	margin: 0 auto;
-	position: static;
-	border: rgb(10,200,0) 4px solid;
-	border-radius: 5px;
-	box-sizing: border-box;
-
-}
-.info_bar .statistic_column{
-	background-color: rgba(0,0,0,0);
-	margin: 0 auto;	
-	height: 100%;
+html, body {
+    width: 100%;
+    margin: 0 auto;
+    font-family: sans-serif;
+    font-size: 17px;
+    background-color: rgb(230, 230, 230);
 }
 
-.info_bar .navigation_column{ 
-	background-color: rgba(0,0,0,0);
-	margin: 0 auto;
-	height: 100%;
+.page {
+    width: 100%;
+    margin: 0 auto;
 }
 
-.info_bar .detailed_column{
-	margin: 0 auto;
-	height: 100%;
-}
-.info_bar .statistic_column .statistic{
-	height: 100%;
-}
-
-.info_bar .navigation_column .profile_nav{ 
-	height: 100%;
+.main_nav {
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    background-color: rgba(150, 150, 150, 0.6);
 }
 
-.info_bar .detailed_column .detailed{
-	
+.site_logo {
+    float: left;
+    background-color: #DDD;
+}
+
+.nav_icons_container {
+    background-color: #DDD;
 
 }
-.content_container{
-	width: 80%;
-}
-.detailed.picture > img{
-	border-radius: 50%;
-	border: rgb(10,200,0) 4px solid;
-	box-sizing: border-box;
-}
-.essential_content_container{
-}
-.essential_content_container .life_time_container{
-	border: rgb(10,200,0) solid 2px;
-	box-sizing: border-box;
+
+.nav_icons_container .home_icon {
 
 }
-.essential_content_container .sum_of_me_container{
-	border: rgb(10,200,0) solid 2px;
-	box-sizing: border-box;
-}
-.essential_content_container .life_time_container > .header{
-	font-weight: bold;
-	font-size: 19px;
-	text-align: center;
-	border-bottom: rgb(10,200,0) solid 2px;
-	box-sizing: border-box;
-	background-color: rgb(200,200,200);
+
+.nav_icons_container .explore_icon {
 
 }
-.essential_content_container .life_time_container .sub_container > .header{
-	margin: 4px;
-}
-.essential_content_container .life_time_container .sub_container .header .icon{
+
+.nav_icons_container .message_icon {
 
 }
-.essential_content_container .life_time_container .sub_container .header .text{
+
+.nav_icons_container .journey_icon {
 
 }
-.essential_content_container .life_time_container .sub_container .content{
+
+.nav_profile_icons_container {
+    background-color: #DDD;
+    float: right;
+}
+
+.nav_profile_icons_container .profile_icon {
 
 }
-.essential_content_container .life_time_container .sub_container .content ul{
- 	margin-left: -4px;
- 	margin-top: 0;
- 	margin-bottom: 0; 
-}
-.essential_content_container .life_time_container .sub_container .content ul li{
-	text-indent: -4px;
-}
-.essential_content_container .sum_of_me_container  > .header{
-	font-weight: bold;
-	font-size: 19px;
-	text-align: center;
-	border-bottom: rgb(10,200,0) solid 2px;
-	box-sizing: border-box;
-	background-color: rgb(200,200,200);
-}
-.essential_content_container .sum_of_me_container .sub_container{
+
+.nav_profile_icons_container .love_icon {
 
 }
-.essential_content_container .sum_of_me_container .sub_container .text{
-	text-align: center;
+
+.nav_profile_icons_container .privacy_icon {
 
 }
-.essential_content_container .sum_of_me_container .sub_container .photo{
+
+.nav_profile_icons_container .logout_icon {
 
 }
-.vertical_middle{
-	display: table-cell !important;
-	vertical-align: middle
+
+.photo_header {
+    width: 100%;
+    background-color: red;
 }
-.selected{
-	border: white solid 2px;
-	box-sizing: border-box;
+
+.info_bar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 auto;
+    position: static;
+    border: rgb(10, 200, 0) 4px solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+}
+
+.info_bar .statistic_column {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0 auto;
+    height: 100%;
+}
+
+.info_bar .navigation_column {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0 auto;
+    height: 100%;
+}
+
+.info_bar .detailed_column {
+    margin: 0 auto;
+    height: 100%;
+}
+
+.info_bar .statistic_column .statistic {
+    height: 100%;
+}
+
+.info_bar .navigation_column .profile_nav {
+    height: 100%;
+}
+
+.info_bar .detailed_column .detailed {
+
+}
+
+.content_container {
+    width: 80%;
+}
+
+.detailed.picture > img {
+    border-radius: 50%;
+    border: rgb(10, 200, 0) 4px solid;
+    box-sizing: border-box;
+}
+
+.essential_content_container {
+}
+
+.essential_content_container .life_time_container {
+    border: rgb(10, 200, 0) solid 2px;
+    box-sizing: border-box;
+
+}
+
+.essential_content_container .sum_of_me_container {
+    border: rgb(10, 200, 0) solid 2px;
+    box-sizing: border-box;
+}
+
+.essential_content_container .life_time_container > .header {
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+    border-bottom: rgb(10, 200, 0) solid 2px;
+    box-sizing: border-box;
+    background-color: rgb(200, 200, 200);
+
+}
+
+.essential_content_container .life_time_container .sub_container > .header {
+    margin: 4px;
+}
+
+.essential_content_container .life_time_container .sub_container .header .icon {
+
+}
+
+.essential_content_container .life_time_container .sub_container .header .text {
+
+}
+
+.essential_content_container .life_time_container .sub_container .content {
+
+}
+
+.essential_content_container .life_time_container .sub_container .content ul {
+    margin-left: -4px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.essential_content_container .life_time_container .sub_container .content ul li {
+    text-indent: -4px;
+}
+
+.essential_content_container .sum_of_me_container > .header {
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+    border-bottom: rgb(10, 200, 0) solid 2px;
+    box-sizing: border-box;
+    background-color: rgb(200, 200, 200);
+}
+
+.essential_content_container .sum_of_me_container .sub_container {
+
+}
+
+.essential_content_container .sum_of_me_container .sub_container .text {
+    text-align: center;
+
+}
+
+.essential_content_container .sum_of_me_container .sub_container .photo {
+
+}
+
+.vertical_middle {
+    display: table-cell !important;
+    vertical-align: middle
+}
+
+.selected {
+    border: white solid 2px;
+    box-sizing: border-box;
 }

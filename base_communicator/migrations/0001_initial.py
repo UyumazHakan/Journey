@@ -7,7 +7,6 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
     ]
 
@@ -36,11 +35,13 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('title', models.TextField(max_length=50)),
-                ('cover_photo', models.ImageField(upload_to='web/static/journey_photos/%Y/%m/%d/%h/', blank=True, null=True)),
+                ('cover_photo',
+                 models.ImageField(upload_to='web/static/journey_photos/%Y/%m/%d/%h/', blank=True, null=True)),
                 ('date', models.DateField()),
                 ('summary', models.TextField(max_length=1000, blank=True, null=True)),
                 ('owner', models.ForeignKey(related_name='owner', to=settings.AUTH_USER_MODEL)),
-                ('users', models.ManyToManyField(related_name='users', blank=True, to=settings.AUTH_USER_MODEL, null=True)),
+                ('users',
+                 models.ManyToManyField(related_name='users', blank=True, to=settings.AUTH_USER_MODEL, null=True)),
             ],
             options={
             },

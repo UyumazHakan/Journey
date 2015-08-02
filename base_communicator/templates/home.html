@@ -6,10 +6,10 @@
 
 </head>
 <body>
-    <a href="{% url 'logout' %}">Log out</a>
-    {% for journey in journeys %}
-        <a href="{% url 'journey' journey_id=journey.id %}">{{ journey.title }}</a>
-    {% endfor %}
-    <a href="{% url 'new_journey' %}">+</a>
+<a href="{% url 'logout' %}">Log out</a>
+{% for journey in journeys %}
+    <a href="{% url 'journey' journey_id=journey.id %}">{{ journey.title }}</a>
+{% endfor %}
+<a href="{% url 'new_journey' %}">+</a>
 </body>
 </html>

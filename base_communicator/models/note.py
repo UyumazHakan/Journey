@@ -1,7 +1,9 @@
 __author__ = 'Hakan Uyumaz'
 
 from django.db import models
+
 from .journey import Journey
+
 
 class Note(models.Model):
     title = models.TextField(max_length=50, null=False, blank=False)
