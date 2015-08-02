@@ -20,6 +20,7 @@ def home_page_view(request):
         user.followings = Friendship.objects.filter(owner=user, type='Fo')
         user.friends = Friendship.objects.filter((Q(owner=user) | Q(friend=user)) & Q(type='Fr'))
         user.journeys = Journey.objects.filter(owner=request.user)
+        print(str(user.educations.all()))
         return render(request, "home.html",
                       {"user": request.user})
     else:

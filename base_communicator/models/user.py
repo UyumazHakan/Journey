@@ -51,6 +51,8 @@ class User(AbstractBaseUser):
     surname = models.CharField('Surname', max_length=50)
     email = models.EmailField(verbose_name='Email', max_length=255, unique=True)
 
+    summary = models.CharField('Summary', max_length=300, null=True, blank=True)
+
     profile_photo = models.ImageField(upload_to='uploaded/user_photos/%Y/%m/%d/%H/', null=True, blank=True)
     cover_photo = models.ImageField(upload_to='uploaded/cover_photos/%Y/%m/%d/%H/', null=True, blank=True)
 

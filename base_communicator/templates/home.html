@@ -12,7 +12,7 @@
           href="{% static 'css/layout_medium.css' %}"/>
     <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:50px) and (max-width:500px)"
           href="{% static 'css/layout_small.css' %}"/>
-    <script src="{% static 'js/trd/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'js/trd/jquery-2.1.1.min.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
     <!--[if it IE 9]>
 		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
@@ -68,7 +68,7 @@
                 <div class="header">
                     Life Time
                 </div>
-                {% if user.educations|length > 0 %}
+                {% if user.educations.all|length > 0 %}
                     <div class="sub_container">
                         <div class="header">
                             <div class="icon">
@@ -80,14 +80,14 @@
                         </div>
                         <div class="content">
                             <ul>
-                                {% for education in user.educations %}
-                                    <li>{{ education.program }}, {{ education.university }}</li>
+                                {% for education in user.educations.all %}
+                                    <li>{{ education.program }}, {{ education.school.name }}</li>
                                 {% endfor %}
                             </ul>
                         </div>
                     </div>
                 {% endif %}
-                {% if user.works|length > 0 %}
+                {% if user.works.all|length > 0 %}
                     <div class="sub_container">
                         <div class="header">
                             <div class="icon">
@@ -98,7 +98,7 @@
                         </div>
                         <div class="content">
                             <ul>
-                                {% for work in user.works %}
+                                {% for work in user.works.all %}
                                     <li>{{ work.title }}, {{ work.company }}</li>
                                 {% endfor %}
                             </ul>
