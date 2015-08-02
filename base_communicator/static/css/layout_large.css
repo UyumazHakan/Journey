@@ -130,6 +130,7 @@ html, body {
 
 .info_bar .detailed_column .detailed.picture {
     display: block;
+    margin-top: -85px;
 }
 
 .detailed.picture > img {
