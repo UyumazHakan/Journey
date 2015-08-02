@@ -37,7 +37,7 @@
         </div>
 
     </div>
-    <div class="photo_header" style="background-image:url({{ user.cover_photo }})">
+    <div class="photo_header" style="background-image:url({{ MEDIA_URL }}{{ user.cover_photo }})">
     </div>
     <div class="info_bar">
         <div class="statistic_column">
@@ -54,7 +54,7 @@
         </div>
         <div class="detailed_column">
 
-            <div class="detailed picture"><img src="{{ user.profile_photo }}"></div>
+            <div class="detailed picture"><img src="{{ MEDIA_URL }}{{ user.profile_photo }}"></div>
             <div class="detailed name">{{ user.name }} {{ user.surname }}</div>
 
 
