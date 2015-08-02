@@ -51,11 +51,11 @@ class User(AbstractBaseUser):
     surname = models.CharField('Surname', max_length=50)
     email = models.EmailField(verbose_name='Email', max_length=255, unique=True)
 
-    profile_photo = models.ImageField(upload_to='uploaded/user_photos/%Y/%m/%d/%h/', null=True, blank=True)
-    cover_photo = models.ImageField(upload_to='uploaded/cover_photos/%Y/%m/%d/%h/', null=True, blank=True)
+    profile_photo = models.ImageField(upload_to='uploaded/user_photos/%Y/%m/%d/%H/', null=True, blank=True)
+    cover_photo = models.ImageField(upload_to='uploaded/cover_photos/%Y/%m/%d/%H/', null=True, blank=True)
 
-    works = models.ManyToManyField(Work, related_name="works", null=True, blank=True)
-    educations = models.ManyToManyField(Education, related_name="educations", null=True, blank=True)
+    works = models.ManyToManyField(Work, related_name="works")
+    educations = models.ManyToManyField(Education, related_name="educations")
 
     activation_key = models.CharField(max_length=40, blank=True)
     activation_expire_date = models.DateTimeField()

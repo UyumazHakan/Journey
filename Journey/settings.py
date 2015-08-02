@@ -86,6 +86,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = '/media/'
+MEDIA_URL = 'http://127.0.0.1:8000/media/'
+
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'base_communicator/templates'),
 )

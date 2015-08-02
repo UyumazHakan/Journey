@@ -10,3 +10,6 @@ class Note(models.Model):
     date = models.DateField(null=False, blank=False)
     text = models.TextField(max_length=1000, null=True, blank=True)
     journey = models.ForeignKey(Journey)
+
+    def __str__(self):
+        return self.title

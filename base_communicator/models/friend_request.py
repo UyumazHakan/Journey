@@ -11,3 +11,6 @@ class FriendshipRequest(models.Model):
     date = models.DateField('Date', null=False, blank=False, auto_now_add=True)
     sender = models.ForeignKey(User, related_name="sender")
     receiver = models.ForeignKey(User, related_name="receiver")
+
+    def __str__(self):
+        return 'Sender: ' + str(self.sender) + '\nReceiver: ' + str(self.receiver) + '\nStatus: ' + self.status

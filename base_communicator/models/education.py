@@ -10,3 +10,6 @@ class Education(models.Model):
     school = models.ForeignKey(School, related_name='school')
     starting_date = models.DateField('Education Starting Date', null=True, blank=True, auto_now_add=False)
     ending_date = models.DateField('Education Ending Date', null=True, blank=True, auto_now_add=False)
+
+    def __str__(self):
+        return 'School: ' + str(self.school) + '\nProgram: ' + self.program
