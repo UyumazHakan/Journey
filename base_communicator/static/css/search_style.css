@@ -1,0 +1,55 @@
+.users {
+    border: rgb(10, 200, 0) solid 2px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.users .header {
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+    border-bottom: rgb(10, 200, 0) solid 2px;
+    box-sizing: border-box;
+    background-color: rgb(200, 200, 200);
+}
+
+.users .user_container {
+    width: 80%;
+    margin: auto;
+}
+
+.user_container .small_picture {
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+
+.small_picture img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.user_container .short_information {
+    float: left;
+    width: 40%;
+    height: 100%;
+    display: table;
+    text-align: center;
+}
+
+.user_container .buttons {
+    float: right;
+    width: 30%;
+    height: 100%;
+}
+
+.buttons .add_friend {
+    width: 40%;
+    height: 100%;
+    background-color: rgb(200, 200, 200);
+    float: right;
+}

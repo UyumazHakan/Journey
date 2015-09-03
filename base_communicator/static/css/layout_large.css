@@ -8,7 +8,6 @@ html, body {
 .main_nav {
     width: 100%;
     height: 50px;
-    margin-top: -100px;
 }
 
 .site_logo {
@@ -22,6 +21,11 @@ html, body {
     height: 100%;
     margin: 0 auto;
 
+}
+
+.nav_icons_container .search_bar {
+    width: 100%;
+    height: 100%;
 }
 
 .nav_icons_container .home_icon {
@@ -141,7 +145,6 @@ html, body {
 .content_container {
     width: 80%;
     overflow: hidden;
-    margin: 100px auto 0;
 
 }
 

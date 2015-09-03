@@ -20,23 +20,7 @@
 </head>
 <body>
 <div class="page">
-    <div class="main_nav">
-        <div class="site_logo">
-        </div>
-        <div class="nav_profile_icons_container">
-            <div class="profile_icon"></div>
-            <div class="love_icon"></div>
-            <div class="privacy_icon"></div>
-            <div class="logout_icon"></div>
-        </div>
-        <div class="nav_icons_container">
-            <div class="home_icon"></div>
-            <div class="explore_icon"></div>
-            <div class="message_icon"></div>
-            <div class="journey_icon"></div>
-        </div>
-
-    </div>
+    {% include 'main_nav.html' %}
     <div class="photo_header" style="background-image:url({{ MEDIA_URL }}{{ user.cover_photo }})">
     </div>
     <div class="info_bar">

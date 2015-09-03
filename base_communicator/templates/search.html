@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta id="view" name="viewport"
+          content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1"/>
+    <title>Sophist Journey</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/layout_large.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/search_style.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/search_layout_large.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:501px) and (max-width:800px)"
+          href="{% static 'css/layout_medium.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:50px) and (max-width:500px)"
+          href="{% static 'css/layout_small.css' %}"/>
+    <script src="{% static 'js/trd/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!--[if it IE 9]>
+		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+		<![endif]-->
+</head>
+<body>
+<div class="page">
+    {% include 'main_nav.html' %}
+    <div class="main_nav_gap"></div>
+    <div class="content_container">
+        <div class="users">
+            <div class="header">Users</div>
+            {% for user in users %}
+                <div class="user_container">
+                    <div class="small_picture">
+                        <img src="{{ MEDIA_URL }}{{ user.profile_photo }}"/>
+                    </div>
+                    <div class="short_information">
+                    <span class="vertical_middle">
+                    {{ user.name }} {{ user.surname }}
+                    </span>
+                    </div>
+                    <div class="buttons">
+                        <div class="add_friend"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
