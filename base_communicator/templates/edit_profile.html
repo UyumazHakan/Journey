@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta id="view" name="viewport"
+          content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1"/>
+    <title>Sophist Journey</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/layout_large.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/search_style.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/search_layout_large.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:501px) and (max-width:800px)"
+          href="{% static 'css/layout_medium.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:50px) and (max-width:500px)"
+          href="{% static 'css/layout_small.css' %}"/>
+    <script src="{% static 'js/trd/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!--[if it IE 9]>
+		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+		<![endif]-->
+</head>
+<body>
+<div class="page">
+    {% include 'main_nav.html' %}
+    <div class="container">
+        <div class="form_container">
+            <form class="profile_edit">
+                <div class="personal_container">
+                    <div class="cover_photo">
+                        <span class="input_name">Cover Photo: </span>
+                        <img src="{{ MEDIA_URL }}{{ user.cover_photo }}">
+                        <input type="file" name="cover_photo">
+                    </div>
+                    <div class="profile_photo">
+                        <span class="input_name">Profile Photo: </span>
+                        <img src="{{ MEDIA_URL }}{{ user.profile_photo }}">
+                        <input type="file" name="profile_photo">
+                    </div>
+                    <div class="name">
+                        <span class="input_name">Name: </span>
+                        <input type="text" name="name" placeholder="Name" value="{{ user.name }}">
+                    </div>
+                    <div class="surname">
+                        <span class="input_name">Surname: </span>
+                        <input type="text" name="surname" placeholder="Surname" value="{{ user.surname }}">
+                    </div>
+                    <div class="email">
+                        <span class="input_name">Email: </span>
+                        <input type="text" name="email" placeholder="Email" value="{{ user.email }}">
+                    </div>
+                </div>
+                <div class="education_container"></div>
+                <div class="work_container"></div>
+            </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
