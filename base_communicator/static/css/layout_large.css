@@ -87,14 +87,14 @@ html, body {
 }
 
 .info_bar .navigation_column {
-    width: 40%;
+    width: 35%;
     display: inline;
     float: right;
     overflow: hidden;
 }
 
 .info_bar .detailed_column {
-    width: 25%;
+    width: 30%;
     display: inline;
     float: left;
     padding-top: 10px;
