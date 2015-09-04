@@ -44,3 +44,11 @@ def new_journey_view(request):
         return render(request, "journey_creator.html")
     else:
         redirect('main')
+
+
+def accessible_journeys(request):
+    if request.user.is_authenticated():
+        journeys = request.user.journeys.all()
+        return render(request, "journeys.html", {"user": request.user, "journeys": journeys})
+    else:
+        redirect('main')
