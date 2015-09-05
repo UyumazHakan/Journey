@@ -1,0 +1,64 @@
+.journeys_container {
+    width: 100%;
+}
+
+.journey_container {
+    width: 90%;
+    background-color: rgb(220, 220, 220);
+}
+
+.journey_container .photo {
+    width: 30%;
+    height: 100%;
+    margin: 0 auto;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+
+.journey_container .photo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.journey_container .journey_info {
+    width: 70%;
+    height: 100%;
+    float: right;
+    display: inline-block;
+}
+
+.journey_container .journey_info .summary {
+    width: 100%;
+    height: 80%;
+
+}
+
+.summary .text {
+    text-align: justify;
+}
+
+.summary .plugins {
+    width: 100%;
+    height: 20%;
+}
+
+.plugins .love {
+    width: 33%;
+    float: left;
+}
+
+.plugins .share {
+    width: 33%;
+    float: left;
+}
+
+.plugins .comment {
+    width: 33%;
+    float: left;
+}
+
+.plugins a {
+    text-decoration: none;
+    color: rgb(10, 200, 0);
+}

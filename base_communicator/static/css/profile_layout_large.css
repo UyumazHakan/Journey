@@ -1,0 +1,44 @@
+.journeys_container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.journey_container {
+    height: 150px;
+}
+
+.journey_container .photo {
+
+}
+
+.journey_container .photo img {
+
+}
+
+.journey_container .journey_info {
+
+}
+
+.journey_container .journey_info .summary {
+
+}
+
+.summary .text {
+    padding: 10px;
+}
+
+.summary .plugins {
+
+}
+
+.plugins .love {
+
+}
+
+.plugins .share {
+
+}
+
+.plugins .comment {
+
+}
