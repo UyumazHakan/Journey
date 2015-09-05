@@ -93,6 +93,24 @@
                         </div>
                     </div>
                 {% endif %}
+                {% if user.interests.all|length > 0 %}
+                    <div class="sub_container">
+                        <div class="header">
+                            <div class="icon">
+                            </div>
+                            <div class="text">
+                                Interests
+                            </div>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                {% for interest in user.interests.all %}
+                                    <li>{{ interest.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
             <div class="sum_of_me_container">
                 <div class="header">
