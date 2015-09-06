@@ -49,3 +49,14 @@ def following_page_view(request, user_id):
         return render(request, 'friends_list.html', {"users": following})
     else:
         return redirect('main')
+
+
+def requests_page_view(request):
+    if request.user.is_authenticated():
+        try:
+            friendship_requests = FriendshipRequest.objects.get(receiver=request.user)
+        except FriendshipRequest.DoesNotExist:
+            friendship_requests = []
+        return render(request, 'request_list.html', {"friendship_requests": friendship_requests})
+    else:
+        return redirect('main')

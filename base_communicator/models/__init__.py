@@ -9,3 +9,4 @@ from .work import Work
 from .company import Company
 from .education import Education
 from .school import School
+from .interest import Interest
