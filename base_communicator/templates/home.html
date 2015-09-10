@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="page">
-    {% include 'main_nav.html' %}
+    {% include 'main_nav.html' with user=user %}
     <div class="photo_header" style="background-image:url({{ MEDIA_URL }}{{ user.cover_photo }})">
     </div>
     <div class="info_bar">
