@@ -10,8 +10,8 @@ from django.contrib.auth.models import (
 
 from ..utils import generate_token
 from .work import Work
-from .education import Education
 from .interest import Interest
+from .education import Education
 
 
 class UserManager(BaseUserManager):
@@ -86,3 +86,29 @@ class User(AbstractBaseUser):
 
     def get_short_name(self):
         return self.name
+
+    def share_journey(self, journey):
+        journey.sharers.add(self)
+
+    def comment_journey(self, journey, text):
+        from .comment import Comment
+
+        comment = Comment(journey=journey, text=text, user=self)
+        comment.save()
+        del Comment
+
+    def delete_comment(self, comment):
+        if comment.user == self:
+            comment.delete()
+
+    def love_journey(self, journey):
+        if journey.loves.filter(id=self.id).exist():
+            journey.loves.remove(self)
+        else:
+            journey.loves.add(self)
+
+    def love_comment(self, comment):
+        if comment.loves.filter(id=self.id).exist():
+            comment.loves.remove(self)
+        else:
+            comment.loves.add(self)

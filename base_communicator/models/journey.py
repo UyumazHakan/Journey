@@ -17,6 +17,6 @@ class Journey(models.Model):
     users = models.ManyToManyField(User, related_name="journeys", )
     owner = models.ForeignKey(User, related_name="owned_journeys")
     sharers = models.ManyToManyField(User, related_name="shared_journeys")
-
+    loves = models.ManyToManyField(User, related_name='journey_loves')
     def __str__(self):
         return self.title
