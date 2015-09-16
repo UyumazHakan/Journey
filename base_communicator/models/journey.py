@@ -16,6 +16,7 @@ class Journey(models.Model):
     summary = models.TextField(max_length=1000, null=True, blank=True)
     users = models.ManyToManyField(User, related_name="journeys", )
     owner = models.ForeignKey(User, related_name="owned_journeys")
+    sharers = models.ManyToManyField(User, related_name="shared_journeys")
 
     def __str__(self):
         return self.title
