@@ -149,6 +149,18 @@
                             </div>
                         </div>
                     </div>
+                    <div class="comments_container">
+                        {% for comment in journey.comments.all %}
+                            <div class="comment_container">
+                                <div class="photo">
+                                    <img src="{{ MEDIA_URL }}{{ comment.user.profile_photo }}">
+                                </div>
+                                <div class="text">
+                                    {{ comment.text }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             {% endfor %}
         </div>

@@ -7,7 +7,7 @@
     background-color: rgb(220, 220, 220);
 }
 
-.journey_container .photo {
+.journey_container > .photo {
     width: 30%;
     height: 100%;
     margin: 0 auto;
@@ -16,7 +16,7 @@
     text-align: center;
 }
 
-.journey_container .photo img {
+.journey_container > .photo img {
     max-width: 100%;
     max-height: 100%;
 }
@@ -61,4 +61,40 @@
 .plugins a {
     text-decoration: none;
     color: rgb(10, 200, 0);
+}
+
+.comments_container {
+    width: 100%;
+    display: inline-block;
+}
+
+.comment_container {
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgb(240, 240, 240);
+}
+
+.comment_container .photo {
+    width: 30%;
+    height: 100%;
+    margin: 0 auto;
+    float: left;
+    display: inline-block;
+    text-align: center;
+
+}
+
+.comment_container .photo img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+.comment_container .text {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    float: right;
+    display: inline-block;
+    text-align: justify;
 }
