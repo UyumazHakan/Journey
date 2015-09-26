@@ -2,12 +2,27 @@ __author__ = 'Hakan Uyumaz'
 
 from django.contrib import admin
 
-from .models import User, Journey, Education, Work, School, Company, Interest, Comment
+from .models import User, Journey, Education, Work, School, Company, Interest, Comment, Note, Photo, Audio, Video
 
 
 class JourneyAdmin(admin.ModelAdmin):
     pass
 
+
+class NoteAdmin(admin.ModelAdmin):
+    pass
+
+
+class PhotoAdmin(admin.ModelAdmin):
+    pass
+
+
+class AudioAdmin(admin.ModelAdmin):
+    pass
+
+
+class VideoAdmin(admin.ModelAdmin):
+    pass
 
 class UserAdmin(admin.ModelAdmin):
     pass
@@ -38,6 +53,10 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Journey, JourneyAdmin)
+admin.site.register(Note, NoteAdmin)
+admin.site.register(Photo, PhotoAdmin)
+admin.site.register(Audio, AudioAdmin)
+admin.site.register(Video, VideoAdmin)
 admin.site.register(User, UserAdmin)
 admin.site.register(Education, EducationAdmin)
 admin.site.register(Work, WorkAdmin)
