@@ -13,3 +13,16 @@ class JourneyElement(models.Model):
     audio = models.ForeignKey(Audio)
     video = models.ForeignKey(Video)
     journey = models.ForeignKey(Journey, related_name="elements")
+    index = models.IntegerField()
+
+    def get_journey_element(self):
+        type = self.type
+        if type == 'N':
+            return self.note
+        elif type == 'P':
+            return self.photo
+        elif type == 'A':
+            return self.audio
+        elif type == 'V':
+            return self.video
+

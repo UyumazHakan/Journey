@@ -12,11 +12,13 @@ class Journey(models.Model):
     photo = models.ImageField(upload_to='uploaded/journey/photos/%Y/%m/%d/%H/', null=True, blank=True)
     cover_photo = models.ImageField(upload_to='uploaded/static/journey/cover_photos/%Y/%m/%d/%H/', null=True,
                                     blank=True)
-    date = models.DateField(null=False, blank=False)
+    date = models.DateField(null=False, blank=False, auto_now_add=True)
     summary = models.TextField(max_length=1000, null=True, blank=True)
     users = models.ManyToManyField(User, related_name="journeys", )
     owner = models.ForeignKey(User, related_name="owned_journeys")
     sharers = models.ManyToManyField(User, related_name="shared_journeys")
     loves = models.ManyToManyField(User, related_name='journey_loves')
+    last_element_index = models.IntegerField()
+
     def __str__(self):
         return self.title

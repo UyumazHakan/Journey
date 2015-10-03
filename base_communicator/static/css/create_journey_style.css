@@ -15,3 +15,13 @@
     float: right;
     margin-top: 20px;
 }
+
+input {
+    margin: 0 0 5px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.one-input-line {
+    width: 100%;
+}

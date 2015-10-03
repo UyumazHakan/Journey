@@ -44,7 +44,7 @@
                 {% endif %}
             <div class="journey">
                 <div class="photo">
-                    <img src="{{ MEDIA_URL }}{{ journey.photo }}">
+                    <img src="{% if journey.photo %}{{ MEDIA_URL }}{{ journey.photo }}{% endif %}">
                 </div>
                 <div class="name">
                     {{ journey.title }}
@@ -56,9 +56,7 @@
                     {{ journey.category }}
                 </div>
             </div>
-            {% if forloop.counter0|divisibleby:3 %}
-                </div>
-            {% endif %}
+                {% cycle '' '' '' ' </div>' %}
             {% endfor %}
         </div>
     </div>

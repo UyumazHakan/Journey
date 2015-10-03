@@ -29,7 +29,7 @@
 }
 
 .journey {
-    display: inline-block;
+    display: inline;
     float: left;
     background-color: #CCCCCC;
 }

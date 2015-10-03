@@ -37,7 +37,10 @@
         </div>
         <div class="navigation_column">
             <div class="profile_nav profile selected"><span class="vertical_middle">Profile</span></div>
-            <div class="profile_nav journey"><span class="vertical_middle">Journeys</span></div>
+            <a href="{% url 'accessible_journeys' %}">
+                <div class="profile_nav journey"><span class="vertical_middle">Journeys</span></div>
+            </a>
+
             <div class="profile_nav share"><span class="vertical_middle">Shares</span></div>
         </div>
         <div class="detailed_column">
