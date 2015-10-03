@@ -1,0 +1,38 @@
+.journey_container {
+
+}
+
+.journey_title {
+    width: 100%;
+    text-align: center;
+
+}
+
+.note {
+    width: 80%;
+    text-align: justify;
+    background-color: #DDDDDD;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.note .title {
+    text-align: center;
+}
+
+.note .text {
+    text-align: center;
+}
+
+.photo .title {
+
+}
+
+.photo .image {
+
+}
+
+.photo .image img {
+
+}
+

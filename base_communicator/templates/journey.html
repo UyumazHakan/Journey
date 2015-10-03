@@ -1,15 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta id="view" name="viewport"
+          content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1"/>
+    <title>Sophist Journey</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/layout_large.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/journey_style.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/journey_layout_large.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:501px) and (max-width:800px)"
+          href="{% static 'css/layout_medium.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:50px) and (max-width:500px)"
+          href="{% static 'css/layout_small.css' %}"/>
+    <script src="{% static 'js/trd/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!--[if it IE 9]>
+		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+		<![endif]-->
 </head>
 <body>
-{{ journey.title }}
-{% for note in journey.note_set.all %}
-    <a href="#">{{ note.title }}</a>
-{% endfor %}
-<a href="{% url 'add_note' journey.id %}">+</a>
-
+{% include 'main_nav.html' with user=user %}
+<div class="main_nav_gap"></div>
+<div class="content_container">
+    <div class="journey_container">
+        <div class="journey_title">
+            {{ journey.title }}
+        </div>
+        {% for element in journey.elements.all %}
+            {% if  element.note %}
+                <div class="note">
+                    <div class="title">
+                        {{ element.note.title }}
+                    </div>
+                    <hr>
+                    <div class="text">
+                        {{ element.note.text }}
+                    </div>
+                </div>
+            {% elif element.photo %}
+                <div class="photo">
+                    <div class="title">
+                        {{ element.note.title }}
+                    </div>
+                    <hr>
+                    <div class="image">
+                        <img src="{{ MEDIA_URL }}{{ element.note.text }}">
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <a href="{% url 'create_note' journey.id %}">
+            <div class="add_note"><img src="{% static 'img/icons/home.png' %}"></div>
+        </a>
+    </div>
+</div>
 </body>
 </html>

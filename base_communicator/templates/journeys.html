@@ -42,24 +42,26 @@
                 {% if forloop.counter0|divisibleby:3 %}
                     <div class="journey_row">
                 {% endif %}
-            <div class="journey">
-                <div class="photo">
-                    <img src="{% if journey.photo %}{{ MEDIA_URL }}{{ journey.photo }}{% endif %}">
-                </div>
-                <div class="name">
-                    {{ journey.title }}
-                </div>
-                <div class="position">
-                    {{ journey.position }}
-                </div>
-                <div class="category">
-                    {{ journey.category }}
-                </div>
-            </div>
+                <a href="{% url 'journey' journey.id %}">
+                    <div class="journey">
+                        <div class="photo">
+                            <img src="{% if journey.photo %}{{ MEDIA_URL }}{{ journey.photo }}{% endif %}">
+                        </div>
+                        <div class="name">
+                            {{ journey.title }}
+                        </div>
+                        <div class="position">
+                            {{ journey.position }}
+                        </div>
+                        <div class="category">
+                            {{ journey.category }}
+                        </div>
+                    </div>
+                </a>
                 {% cycle '' '' '' ' </div>' %}
             {% endfor %}
+            </div>
         </div>
     </div>
-</div>
 </body>
 </html>

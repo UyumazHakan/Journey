@@ -1,6 +1,6 @@
 __author__ = 'Hakan Uyumaz'
 
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 
 from ..models import Journey, JourneyElement, Note
 
@@ -23,12 +23,14 @@ def create_journey(request):
     return redirect('main')
 
 
-def add_note(request):
+def add_note(request, journey_id):
     if request.user.is_authenticated():
+        print("OKKK")
         if request.method == "POST":
             request_body = request.POST
             try:
-                journey = Journey.objects.get(pk=request.POST["journey_id"])
+                journey = Journey.objects.get(pk=journey_id)
+                print(str(journey))
             except Journey.DoesNotExist:
                 return redirect("main")
             note = Note()
@@ -46,14 +48,23 @@ def add_note(request):
     return redirect('main')
 
 
-
+def create_note(request, journey_id):
+    if request.user.is_authenticated():
+        try:
+            journey = Journey.objects.get(pk=journey_id)
+        except Journey.DoesNotExist:
+            return redirect("main")
+        return render(request, "note_creator.html", {"journey": journey})
 
 
 
 
 def journey_view(request, journey_id):
     if request.user.is_authenticated():
-        journey = get_object_or_404(Journey, pk=journey_id)
+        try:
+            journey = Journey.objects.get(pk=journey_id)
+        except Journey.DoesNotExist:
+            return redirect("main")
         return render(request, "journey.html", {"journey": journey})
 
 
