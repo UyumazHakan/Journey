@@ -2,7 +2,7 @@ __author__ = 'Hakan Uyumaz'
 
 from django.shortcuts import render, redirect
 
-from ..models import Journey, JourneyElement, Note
+from ..models import Journey, JourneyElement, Note, Photo
 
 
 def create_journey(request):
@@ -48,6 +48,30 @@ def add_note(request, journey_id):
     return redirect('main')
 
 
+def add_image(request, journey_id):
+    if request.user.is_authenticated():
+        if request.method == "POST":
+            request_body = request.POST
+            try:
+                journey = Journey.objects.get(pk=journey_id)
+                print(str(journey))
+            except Journey.DoesNotExist:
+                return redirect("main")
+            image = Photo()
+            image.title = request_body['title']
+            image.photo = request.FILES['image']
+            image.save()
+            journey_element = JourneyElement()
+            journey_element.type = 'P'
+            journey_element.photo = image
+            journey_element.index = journey.last_element_index + 1
+            journey_element.journey = journey
+            journey.last_element_index = journey.last_element_index + 1
+            journey_element.save()
+            journey.save()
+    return redirect('main')
+
+
 def create_note(request, journey_id):
     if request.user.is_authenticated():
         try:
@@ -55,6 +79,15 @@ def create_note(request, journey_id):
         except Journey.DoesNotExist:
             return redirect("main")
         return render(request, "note_creator.html", {"journey": journey})
+
+
+def create_image(request, journey_id):
+    if request.user.is_authenticated():
+        try:
+            journey = Journey.objects.get(pk=journey_id)
+        except Journey.DoesNotExist:
+            return redirect("main")
+        return render(request, "image_creator.html", {"journey": journey})
 
 
 

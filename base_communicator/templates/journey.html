@@ -42,17 +42,20 @@
             {% elif element.photo %}
                 <div class="photo">
                     <div class="title">
-                        {{ element.note.title }}
+                        {{ element.photo.title }}
                     </div>
                     <hr>
                     <div class="image">
-                        <img src="{{ MEDIA_URL }}{{ element.note.text }}">
+                        <img src="{{ MEDIA_URL }}{{ element.photo.photo }}">
                     </div>
                 </div>
             {% endif %}
         {% endfor %}
         <a href="{% url 'create_note' journey.id %}">
             <div class="add_note"><img src="{% static 'img/icons/home.png' %}"></div>
+        </a>
+        <a href="{% url 'create_image' journey.id %}">
+            <div class="add_image"><img src="{% static 'img/icons/home.png' %}"></div>
         </a>
     </div>
 </div>

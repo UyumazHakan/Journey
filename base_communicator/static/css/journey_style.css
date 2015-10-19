@@ -24,12 +24,20 @@
     text-align: center;
 }
 
-.photo .title {
+.photo {
+    width: 80%;
+    text-align: justify;
+    background-color: #DDDDDD;
+    border-radius: 10px;
+    margin: 0 auto;
+}
 
+.photo .title {
+    text-align: center;
 }
 
 .photo .image {
-
+    text-align: center;
 }
 
 .photo .image img {
