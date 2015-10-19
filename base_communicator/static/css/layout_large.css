@@ -23,7 +23,6 @@ html, body {
 
 }
 
-
 .nav_icons_container .home_icon {
 
 }
@@ -141,6 +140,7 @@ html, body {
 .content_container {
     width: 80%;
     overflow: hidden;
+    margin-top: 10px;
 
 }
 

@@ -39,7 +39,9 @@
             </a>
         </div>
         <div class="navigation_column">
-            <div class="profile_nav profile selected"><span class="vertical_middle">Profile</span></div>
+            <a href="{% url 'edit_profile' %}">
+                <div class="profile_nav profile"><span class="vertical_middle">Profile</span></div>
+            </a>
             <a href="{% url 'accessible_journeys' %}">
                 <div class="profile_nav journey"><span class="vertical_middle">Journeys</span></div>
             </a>

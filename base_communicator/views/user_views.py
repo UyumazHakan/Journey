@@ -1,7 +1,7 @@
 __author__ = 'Hakan Uyumaz'
 
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.utils import timezone
 
 from ..forms import UserCreationForm
@@ -66,3 +66,26 @@ def activate_view(request, activation_key):
         return redirect("main")
     else:
         return redirect("main")
+
+
+def edit_profile_view(request):
+    if request.user.is_authenticated():
+        return render(request, 'edit_profile.html', {"user": request.user})
+    else:
+        return redirect("main")
+
+
+def post_edit_profile(request):
+    if request.user.is_authenticated():
+        if request.method == "POST":
+            request.user.first_name = request.POST["name"]
+            request.user.last_name = request.POST["surname"]
+            request.user.email = request.POST["email"]
+            if 'cover_photo' in request.FILES:
+                request.user.cover_photo = request.FILES["cover_photo"]
+            if 'profile_photo' in request.FILES:
+                request.user.profile_photo = request.FILES["profile_photo"]
+            request.user.save()
+            return redirect("edit_profile")
+        return redirect("main")
+    return redirect("main")

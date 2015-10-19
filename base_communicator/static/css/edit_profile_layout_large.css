@@ -1,0 +1,49 @@
+.form_container {
+
+}
+
+.profile_edit {
+
+}
+
+.personal_container {
+
+}
+
+.profile_edit .cover_photo {
+
+}
+
+.profile_edit .cover_photo img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+input {
+
+}
+
+.profile_edit.profile_photo {
+
+}
+
+.profile_edit .profile_photo img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.education_container {
+
+}
+
+.education_container.header {
+
+}
+
+.work_container {
+
+}
+
+.work_container.header {
+
+}

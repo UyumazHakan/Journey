@@ -1,0 +1,56 @@
+.form_container {
+
+}
+
+.profile_edit {
+    border: rgb(10, 200, 0) 4px dashed;
+}
+
+.personal_container {
+
+}
+
+.profile_edit.cover_photo {
+    width: 100%;
+}
+
+.profile_edit.cover_photo > img {
+
+}
+
+.profile_edit .input_name {
+    width: 30%;
+    float: left;
+    height: 100%;
+}
+
+.profile_edit .input_content {
+    width: 70%;
+    float: left;
+    height: 100%;
+}
+
+.profile_edit.profile_photo {
+
+}
+
+.education_container {
+
+}
+
+.education_container.header {
+
+}
+
+.work_container {
+
+}
+
+.work_container.header {
+
+}
+
+.submit {
+    float: right;
+    height: 25px;
+}

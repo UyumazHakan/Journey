@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/layout_large.css' %}"/>
     <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/search_style.css' %}"/>
     <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/search_layout_large.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/edit_profile_style.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/edit_profile_layout_large.css' %}"/>
     <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:501px) and (max-width:800px)"
           href="{% static 'css/layout_medium.css' %}"/>
     <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:50px) and (max-width:500px)"
@@ -23,44 +25,70 @@
 <body>
 <div class="page">
     {% include 'main_nav.html' %}
-    <div class="container">
+    <div class="main_nav_gap"></div>
+    <div class="content_container">
         <div class="form_container">
-            <form class="profile_edit">
+            <form class="profile_edit" action="{% url 'post_edit_profile' %}" method="POST"
+                  enctype="multipart/form-data">
                 <div class="personal_container">
                     <div class="cover_photo">
                         <span class="input_name">Cover Photo: </span>
-                        <img src="{{ MEDIA_URL }}{{ user.cover_photo }}">
-                        <input type="file" name="cover_photo">
+
+                        <div class="input_content">
+                            <img src="{{ MEDIA_URL }}{{ user.cover_photo }}"><br>
+                            <input type="file" name="cover_photo">
+                        </div>
                     </div>
+                    <hr>
                     <div class="profile_photo">
                         <span class="input_name">Profile Photo: </span>
-                        <img src="{{ MEDIA_URL }}{{ user.profile_photo }}">
-                        <input type="file" name="profile_photo">
+
+                        <div class="input_content">
+                            <img src="{{ MEDIA_URL }}{{ user.profile_photo }}"><br>
+                            <input type="file" name="profile_photo">
+                        </div>
                     </div>
+                    <hr>
                     <div class="name">
                         <span class="input_name">Name: </span>
-                        <input type="text" name="name" placeholder="Name" value="{{ user.name }}">
+
+                        <div class="input_content">
+                            <input type="text" name="name" placeholder="Name" value="{{ user.name }}">
+                        </div>
                     </div>
+                    <hr>
                     <div class="surname">
-                        <span class="input_surname">Surname: </span>
-                        <input type="text" name="surname" placeholder="Surname" value="{{ user.surname }}">
+                        <span class="input_name">Surname: </span>
+
+                        <div class="input_content">
+                            <input type="text" name="surname" placeholder="Surname" value="{{ user.surname }}">
+                        </div>
                     </div>
+                    <hr>
                     <div class="email">
-                        <span class="input_email">Email: </span>
-                        <input type="text" name="email" placeholder="Email" value="{{ user.email }}">
+                        <span class="input_name">Email: </span>
+
+                        <div class="input_content">
+                            <input type="text" name="email" placeholder="Email" value="{{ user.email }}">
+                        </div>
                     </div>
+                    <hr>
                 </div>
-                <div class="education_container">
+                <!--<div class="education_container">
                     <div class="add_school">
                         <span class="header">Add School</span>
 
                         <div class="school_name">
-                            <span class="input_school_name">School Name: </span>
+                            <span class="input_name">School Name: </span>
                             <input type="text" name="school_name" placeholder="School Name">
                         </div>
                     </div>
                 </div>
-                <div class="work_container"></div>
+                <div class="work_container"></div>-->
+                <div class="submit">
+                    <input type="submit" value="Submit">
+                </div>
+                <div style="clear: both"></div>
             </form>
 
         </div>
