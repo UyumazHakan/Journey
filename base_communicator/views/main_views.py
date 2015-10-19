@@ -33,3 +33,17 @@ def search_page_view(request):
         return render(request, "search.html", {"users": users})
     else:
         return redirect('main')
+
+
+def newsfeed_page_view(request):
+    if request.user.is_authenticated():
+        try:
+            followings = Friendship.objects.get(owner=request.user)
+        except Friendship.DoesNotExist:
+            followings = []
+        journeys = []
+        for following in followings:
+            journeys.append(following.owned_journeys.all())
+        return render(request, "journeys.html", {"user": request.user, "journeys": journeys})
+    else:
+        return redirect('main')

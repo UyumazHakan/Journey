@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <div class="main_nav">
     <div class="site_logo">
-        <img src="{% static 'img/icons/home.png' %}">
+        <a href="{% url 'home' %}"><img src="{% static 'img/icons/home.png' %}"></a>
     </div>
     <div class="search_bar">
         <form action="{% url 'search' %}" method="GET"><span class="vertical_middle_helper"></span><input type="text"
@@ -10,8 +10,8 @@
         </form>
     </div>
     <div class="nav_profile_icons_container">
-        <div class="profile_icon"><span class="vertical_middle_helper"></span><img
-                src="{{ MEDIA_URL }}{{ user.profile_photo }}"></div>
+        <div class="profile_icon"><span class="vertical_middle_helper"></span><a href="{% url 'home' %}"><img
+                src="{{ MEDIA_URL }}{{ user.profile_photo }}"></a></div>
         <div class="love_icon"><span class="vertical_middle_helper"></span><img src="{% static 'img/icons/home.png' %}">
         </div>
         <div class="privacy_icon"><span class="vertical_middle_helper"></span><img
@@ -21,8 +21,8 @@
     </div>
     <div class="nav_icons_container">
 
-        <div class="home_icon"><span class="vertical_middle_helper"></span><img src="{% static 'img/icons/home.png' %}">
-        </div>
+        <div class="home_icon"><span class="vertical_middle_helper"></span><a href="{% url 'newsfeed' %}"><img
+                src="{% static 'img/icons/home.png' %}"></a></div>
         <div class="explore_icon"><span class="vertical_middle_helper"></span><img
                 src="{% static 'img/icons/home.png' %}"></div>
         <div class="message_icon"><span class="vertical_middle_helper"></span><img

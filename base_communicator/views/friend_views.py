@@ -27,7 +27,7 @@ def follower_page_view(request, user_id):
         except User.DoesNotExist:
             return redirect("main")
         try:
-            follower = Friendship.objects.get(owner=user)
+            follower = Friendship.objects.get(friend=user)
         except Friendship.DoesNotExist:
             follower = []
         return render(request, 'friends_list.html', {"users": follower})
@@ -45,7 +45,6 @@ def following_page_view(request, user_id):
             following = Friendship.objects.get(owner=user)
         except Friendship.DoesNotExist:
             following = []
-
         return render(request, 'friends_list.html', {"users": following})
     else:
         return redirect('main')
