@@ -29,11 +29,14 @@
     </div>
     <div class="info_bar">
         <div class="statistic_column">
-            <div class="statistic friend"><span class="vertical_middle">{{ user.friends|length }} Friends</span></div>
-            <div class="statistic follower"><span class="vertical_middle">{{ user.followers|length }} Followers</span>
-            </div>
-            <div class="statistic following"><span
-                    class="vertical_middle">{{ user.followings|length }} Followings</span></div>
+            <a href="{% url 'follower' user.id %}">
+                <div class="statistic follower"><span
+                        class="vertical_middle">{{ user.followers.count }} Followers</span></div>
+            </a>
+            <a href="{% url 'follower' user.id %}">
+                <div class="statistic following"><span
+                        class="vertical_middle">{{ user.followings.count }} Followings</span></div>
+            </a>
         </div>
         <div class="navigation_column">
             <div class="profile_nav profile selected"><span class="vertical_middle">Profile</span></div>
@@ -132,20 +135,25 @@
             {% for journey in journeys %}
                 <div class="journey_container">
                     <div class="photo">
-                        <img src="{{ MEDIA_URL }}{{ journey.photo }}">
+                        <img src="{% if journey.photo %}{{ MEDIA_URL }}{{ journey.photo }}{% endif %}">
                     </div>
                     <div class="journey_info">
-                        <div class="summary">
-                            <div class="text">
-                                {{ journey.summary }}
+                        <a href="{% url 'journey' journey.id %}">
+                            <div class="summary">
+                                <div class="text">
+                                    {{ journey.summary }}
+                                </div>
                             </div>
-                        </div>
+                        </a>
+
                         <div class="plugins">
                             <div class="love">
-                                <a href="#">LOVE</a>
+                                <a href="{% url 'love_journey' journey.id %}">LOVE{% if journey.loves.count > 0 %}(
+                                    {{ journey.loves.count }}){% endif %}</a>
                             </div>
                             <div class="share">
-                                <a href="#">SHARE</a>
+                                <a href="{% url 'share_journey' journey.id %}">SHARE{% if journey.sharers.count > 0 %}(
+                                    {{ journey.sharers.count }}){% endif %}</a>
                             </div>
                             <div class="comment">
                                 <a href="#">COMMENT</a>
@@ -156,7 +164,8 @@
                         {% for comment in journey.comments.all %}
                             <div class="comment_container">
                                 <div class="photo">
-                                    <img src="{{ MEDIA_URL }}{{ comment.user.profile_photo }}">
+                                    <img src="
+                                            {% if comment.user.profile_photo %}{{ MEDIA_URL }}{{ comment.user.profile_photo }}{% endif %}">
                                 </div>
                                 <div class="text">
                                     {{ comment.text }}

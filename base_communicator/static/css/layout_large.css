@@ -98,7 +98,7 @@ html, body {
 
 .info_bar .statistic_column .statistic {
     float: left;
-    width: 33%;
+    width: 50%;
     text-align: center;
     overflow: hidden;
     height: 100%;

@@ -102,13 +102,13 @@ class User(AbstractBaseUser):
             comment.delete()
 
     def love_journey(self, journey):
-        if journey.loves.filter(id=self.id).exist():
+        if journey.loves.filter(id=self.id):
             journey.loves.remove(self)
         else:
             journey.loves.add(self)
 
     def love_comment(self, comment):
-        if comment.loves.filter(id=self.id).exist():
+        if comment.loves.filter(id=self.id):
             comment.loves.remove(self)
         else:
             comment.loves.add(self)

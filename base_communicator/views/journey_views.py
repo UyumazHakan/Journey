@@ -81,3 +81,23 @@ def accessible_journeys(request):
         return render(request, "journeys.html", {"user": request.user, "journeys": journeys})
     else:
         redirect('main')
+
+
+def love_journey(request, journey_id):
+    if request.user.is_authenticated():
+        try:
+            journey = Journey.objects.get(pk=journey_id)
+        except Journey.DoesNotExist:
+            return redirect("main")
+        request.user.love_journey(journey)
+        return redirect('main')
+
+
+def share_journey(request, journey_id):
+    if request.user.is_authenticated():
+        try:
+            journey = Journey.objects.get(pk=journey_id)
+        except Journey.DoesNotExist:
+            return redirect("main")
+        request.user.share_journey(journey)
+        return redirect('main')
