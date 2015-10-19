@@ -10,6 +10,8 @@ def create_journey(request):
         if request.method == "POST":
             request_body = request.POST
             journey = Journey()
+            if 'photo' in request.FILES:
+                journey.photo = request.FILES['photo']
             journey.title = request_body["title"]
             journey.position = request_body["position"]
             journey.category = request_body["category"]

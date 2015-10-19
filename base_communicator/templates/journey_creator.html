@@ -27,7 +27,8 @@
     </div>
     <div class="content_container">
         <div id="content_window">
-            <form action="{% url 'create_journey' %}" method="post">
+            <form action="{% url 'create_journey' %}" method="post" enctype="multipart/form-data">
+                <input class="one-input-line" name="photo" placeholder="Photo" type="file">
                 <input class="one-input-line" name="title" placeholder="Title" type="text">
                 <input class="one-input-line" name="position" placeholder="Position" type="text">
                 <input class="one-input-line" name="category" placeholder="Category" type="text">
