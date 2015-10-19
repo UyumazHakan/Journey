@@ -158,7 +158,7 @@
                                     {{ journey.sharers.count }}){% endif %}</a>
                             </div>
                             <div class="comment">
-                                <a href="#">COMMENT</a>
+                                <a href="{% url 'create_comment' journey.id %}">COMMENT</a>
                             </div>
                         </div>
                     </div>

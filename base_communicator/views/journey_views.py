@@ -2,7 +2,7 @@ __author__ = 'Hakan Uyumaz'
 
 from django.shortcuts import render, redirect
 
-from ..models import Journey, JourneyElement, Note, Photo
+from ..models import Journey, JourneyElement, Note, Photo, Comment
 
 
 def create_journey(request):
@@ -90,6 +90,30 @@ def create_image(request, journey_id):
         return render(request, "image_creator.html", {"journey": journey})
 
 
+def add_comment(request, journey_id):
+    if request.user.is_authenticated():
+        if request.method == "POST":
+            request_body = request.POST
+            try:
+                journey = Journey.objects.get(pk=journey_id)
+                print(str(journey))
+            except Journey.DoesNotExist:
+                return redirect("main")
+            comment = Comment()
+            comment.text = request.POST["text"]
+            comment.user = request.user
+            comment.journey = journey
+            comment.save()
+    return redirect('main')
+
+
+def create_comment(request, journey_id):
+    if request.user.is_authenticated():
+        try:
+            journey = Journey.objects.get(pk=journey_id)
+        except Journey.DoesNotExist:
+            return redirect("main")
+        return render(request, "comment_creator.html", {"journey": journey})
 
 
 def journey_view(request, journey_id):

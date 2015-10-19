@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta id="view" name="viewport"
+          content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1"/>
+    <title>Sophist Journey</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/layout_large.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/create_journey_style.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" href="{% static 'css/create_journey_layout_large.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:501px) and (max-width:800px)"
+          href="{% static 'css/layout_medium.css' %}"/>
+    <link rel="stylesheet" type="text/stylesheet" media="only screen and (min-width:50px) and (max-width:500px)"
+          href="{% static 'css/layout_small.css' %}"/>
+    <script src="{% static 'js/trd/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!--[if it IE 9]>
+		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+		<![endif]-->
+</head>
+<body>
+<div class="page">
+    {% include 'main_nav.html' with user=user %}
+    <div class="main_nav_gap">
+    </div>
+    <div class="content_container">
+        <div id="content_window">
+            <form action="{% url 'add_comment' journey.id %}" method="post">
+                <input class="one-input-line" name="text" placeholder="Text" type="text" rows="10">
+                <input class="one-input-line" name="create" value="Submit" type="submit">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
