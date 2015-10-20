@@ -38,7 +38,9 @@
                     </span>
                     </div>
                     <div class="buttons">
-                        <div class="add_friend"></div>
+                        <a href="{% url 'follow' user.public_id %}">
+                            <div class="add_friend"></div>
+                        </a>
                     </div>
                 </div>
             {% endfor %}

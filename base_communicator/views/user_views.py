@@ -29,7 +29,7 @@ def register_view(request):
 
 def login_view(request):
     if request.user.is_authenticated():
-        redirect("main")
+        return redirect("main")
     else:
         email = request.POST.get('email', None)
         password = request.POST.get('password', None)

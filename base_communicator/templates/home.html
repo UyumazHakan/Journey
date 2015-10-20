@@ -33,8 +33,8 @@
                 <div class="statistic follower"><span
                         class="vertical_middle">{{ user.followers.count }} Followers</span></div>
             </a>
-            <a href="{% url 'follower' user.id %}">
-                <div class="statistic following"><span
+            <a href="{% url 'following' user.id %}">
+            <div class="statistic following"><span
                         class="vertical_middle">{{ user.followings.count }} Followings</span></div>
             </a>
         </div>
@@ -50,7 +50,8 @@
         </div>
         <div class="detailed_column">
 
-            <div class="detailed picture"><img src="{{ MEDIA_URL }}{{ user.profile_photo }}"></div>
+            <div class="detailed picture"><img
+                    src="{% if user.profile_photo %}{{ MEDIA_URL }}{{ user.profile_photo }}{% endif %}"></div>
             <div class="detailed name">{{ user.name }} {{ user.surname }}</div>
 
 

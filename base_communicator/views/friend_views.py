@@ -27,10 +27,13 @@ def follower_page_view(request, user_id):
         except User.DoesNotExist:
             return redirect("main")
         try:
-            follower = Friendship.objects.get(friend=user)
+            friendships = Friendship.objects.filter(friend=user).all()
         except Friendship.DoesNotExist:
-            follower = []
-        return render(request, 'friends_list.html', {"users": follower})
+            friendships = []
+        followers = []
+        for friendship in friendships:
+            followers.append(friendship.owner)
+        return render(request, 'friends_list.html', {"users": followers})
     else:
         return redirect('main')
 
@@ -42,10 +45,13 @@ def following_page_view(request, user_id):
         except User.DoesNotExist:
             return redirect("main")
         try:
-            following = Friendship.objects.get(owner=user)
+            friendships = Friendship.objects.filter(owner=user).all()
         except Friendship.DoesNotExist:
-            following = []
-        return render(request, 'friends_list.html', {"users": following})
+            friendships = []
+        followings = []
+        for friendship in friendships:
+            followings.append(friendship.friend)
+        return render(request, 'friends_list.html', {"users": followings})
     else:
         return redirect('main')
 
@@ -57,5 +63,21 @@ def requests_page_view(request):
         except FriendshipRequest.DoesNotExist:
             friendship_requests = []
         return render(request, 'request_list.html', {"friendship_requests": friendship_requests})
+    else:
+        return redirect('main')
+
+
+def follow(request, user_id):
+    if request.user.is_authenticated():
+        try:
+            friend = User.objects.get(public_id=user_id)
+        except User.DoesNotExist:
+            return redirect('main')
+        friendship = Friendship()
+        friendship.type = 'Fo'
+        friendship.owner = request.user
+        friendship.friend = friend
+        friendship.save()
+        return redirect('main')
     else:
         return redirect('main')

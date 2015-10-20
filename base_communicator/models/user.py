@@ -57,9 +57,9 @@ class User(AbstractBaseUser):
     profile_photo = models.ImageField(upload_to='uploaded/user_photos/%Y/%m/%d/%H/', null=True, blank=True)
     cover_photo = models.ImageField(upload_to='uploaded/cover_photos/%Y/%m/%d/%H/', null=True, blank=True)
 
-    works = models.ManyToManyField(Work, related_name="users")
-    educations = models.ManyToManyField(Education, related_name="users")
-    interests = models.ManyToManyField(Interest, related_name="users")
+    works = models.ManyToManyField(Work, related_name="users", null=True, blank=True)
+    educations = models.ManyToManyField(Education, related_name="users", null=True, blank=True)
+    interests = models.ManyToManyField(Interest, related_name="users", null=True, blank=True)
 
     activation_key = models.CharField(max_length=40, blank=True)
     activation_expire_date = models.DateTimeField()

@@ -29,7 +29,7 @@ def home_page_view(request):
 def search_page_view(request):
     key = request.GET["key"]
     if request.user.is_authenticated():
-        users = User.objects.filter(Q(name=key) | Q(surname=key))
+        users = User.objects.filter(Q(name__icontains=key) | Q(surname__icontains=key))
         return render(request, "search.html", {"users": users})
     else:
         return redirect('main')
@@ -38,12 +38,16 @@ def search_page_view(request):
 def newsfeed_page_view(request):
     if request.user.is_authenticated():
         try:
-            followings = Friendship.objects.get(owner=request.user)
+            friendships = Friendship.objects.filter(owner=request.user).all()
         except Friendship.DoesNotExist:
-            followings = []
+            friendships = []
+        followings = []
+        for friendship in friendships:
+            followings.append(friendship.friend)
         journeys = []
         for following in followings:
-            journeys.append(following.owned_journeys.all())
+            for journey in following.owned_journeys.all():
+                journeys.append(journey)
         return render(request, "journeys.html", {"user": request.user, "journeys": journeys})
     else:
         return redirect('main')

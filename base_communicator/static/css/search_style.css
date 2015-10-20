@@ -26,8 +26,8 @@
 }
 
 .small_picture img {
-    max-width: 100%;
-    height: 100%;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     box-sizing: border-box;
 }
